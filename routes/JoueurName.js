@@ -1,11 +1,16 @@
 const routes = require('express').Router();
-const model =require('../models/quizModel')
+const model =require('../models/quizModel');
+const { Router } = require('express');
 
 
-routes.post('/',(req,res)=>{
-    
+
+
+
+routes.post('/game',(req,res)=>{
+    console.log("marche");
+   res.render('Joueur');
+
 })
-
 
 
 
