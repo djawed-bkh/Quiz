@@ -9,24 +9,25 @@
 </head>
 <body>
   <center>  <h1> Node Quiz </h1>
-  </center>
   
-    <form action="/Quiz/name" method="POST" class="col-md-6">
+  
+    <form action="/Quiz/name/SubmitName" method="POST" class="col-md-6">
         <div class="form-group">
           <label for="exampleFormControlInput1">First name</label>
           <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="first name">
         </div>
        
-        <form>
+        
           <label for="">Age</label>
-          <input type="number" min="1" max="100">
-          </form>
-       
-        <br> <br> 
-          <input class="btn btn-primary" type="submit" value="Submit">
+          <input type="number" min="1" max="100" placeholder="EX : 20 yo">
+        
+        <br> <br>
+      <button type="submit" class="btn btn-success col-md-6"> Play !</button>
+  
+          
         
       </form>
-      
+    </center>     
     
 </body>
 </html>
