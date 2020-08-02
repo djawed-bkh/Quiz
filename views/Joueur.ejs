@@ -8,18 +8,20 @@
     <title>Node Quiz</title>
 </head>
 <body>
-  <center>  <h1> Node Quiz </h1>
+  <center>  
+  <h1> Node Quiz </h1>
   
   
     <form action="/Quiz/name/SubmitName" method="POST" class="col-md-6">
-        <div class="form-group">
+        
           <label for="exampleFormControlInput1">First name</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="first name">
-        </div>
+          <input type="text" class="form-control" id="firstNameID" name="prenom" placeholder="first name">
+          <label for="">Age</label>
+          <input type="number" min="1" max="100" placeholder="EX : 20 yo" id="AgeID" name="Age">
+          
        
         
-          <label for="">Age</label>
-          <input type="number" min="1" max="100" placeholder="EX : 20 yo">
+          
         
         <br> <br>
       <button type="submit" class="btn btn-success col-md-6"> Play !</button>

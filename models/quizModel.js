@@ -7,6 +7,7 @@ sollution:Boolean,
 
 });
 
+
 const QuizSchema = mongoose.Schema({
 
     question:{
@@ -17,6 +18,8 @@ const QuizSchema = mongoose.Schema({
 },
 
 });
+
+const Quiz = mongoose.model("QuizCollection",QuizSchema);
 
 
 const joueursSchema= mongoose.Schema({
@@ -34,9 +37,10 @@ const joueursSchema= mongoose.Schema({
 });
 
 
+const joueurs = mongoose.model("joueurCollections",joueursSchema);
+
 module.exports = {
-QuizSchema : QuizSchema,
-JoueursSchema :  joueursSchema,
-Schemaproposition :schemaPopostion
+QuizSchema : Quiz,
+JoueursSchema :  joueurs
 
 }

@@ -4,10 +4,12 @@ const dotenv = require('dotenv');
 const mongoose= require('mongoose');
 const hapi = require('@hapi/joi');
 
+
 const app = express();
 
 const jeuRoutes= require('./routes/Jeu');
 const JoueursRoute=require('./routes/JoueurName');
+
 
 
 
@@ -41,10 +43,12 @@ app.set('view engine','ejs');
 
 
 // middlewares
-app.use(body_parser.json());
 
+app.use(body_parser.json());
+app.use(express.urlencoded({extended:false}));
 app.use('/Quiz/name',JoueursRoute);
 app.use('/Quiz/Jeu',jeuRoutes);
+
 
 
 
