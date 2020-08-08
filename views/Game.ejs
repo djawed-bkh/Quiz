@@ -3,20 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Node quiz</title>
 </head>
 <body>
     <center>
-        <div class="radio">
-            <label><input type="radio" name="optradio" checked>Option 1</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" name="optradio">Option 2</label>
-          </div>
-          <div class="radio disabled">
-            <label><input type="radio" name="optradio" disabled>Option 3</label>
-          </div>
+      <h1> Node quiz </h1> <br> <br>
+     
+
+      <form action="/Quiz/Jeu/play" method="post">
+        <h3>Énoncé du quiz</h3>
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="groupOfDefaultRadios">
+          <label class="custom-control-label" for="defaultGroupExample1">Posibilité 1</label>
+        </div>
+        
+
+<button type="submit"class="btn btn-succes">Next question</button>
+
+      </form>
+
+
+
+
+
     </center>
     
 

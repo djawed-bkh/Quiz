@@ -4,14 +4,18 @@ const model =require('../models/quizModel')
 
 
 
-routes.get('/',(req,res)=>{    
+routes.get('/',(req,res)=>{ 
+     
   res.render('Game')
 })
 
 
 
-routes.post('/',(req,res)=>{    
+routes.post('/play',(req,res)=>{    
   
+
+
+
 })
 
 
