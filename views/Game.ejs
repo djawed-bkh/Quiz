@@ -13,11 +13,16 @@
      
 
       <form action="/Quiz/Jeu/play" method="post">
-        <h3>Énoncé du quiz</h3>
+        <% questions.forEach(data =>{%>
+
+        <h3><%= data.question.enonce %>  </h3>
+
         <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="groupOfDefaultRadios">
-          <label class="custom-control-label" for="defaultGroupExample1">Posibilité 1</label>
+          <label class="custom-control-label" for="defaultGroupExample1"><%= data.question.popostion %></label>
         </div>
+
+      <% }); %> 
         
 
 <button type="submit"class="btn btn-succes">Next question</button>

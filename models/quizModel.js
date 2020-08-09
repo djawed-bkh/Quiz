@@ -12,9 +12,8 @@ const QuizSchema = mongoose.Schema({
 
     question:{
       enonce: String,
-      popostion: [schemaPopostion]
-
-        
+      proposition: [schemaPopostion]
+    
 },
 
 });
