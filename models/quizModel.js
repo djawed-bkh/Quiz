@@ -3,18 +3,18 @@ const mongoose = require('mongoose');
 
 const schemaPopostion = mongoose.Schema({
 proposition: String,
-sollution:Boolean,
+sollution:Boolean
 
 });
 
 
 const QuizSchema = mongoose.Schema({
 
-    question:{
+    
       enonce: String,
       proposition: [schemaPopostion]
     
-},
+
 
 });
 
@@ -29,6 +29,10 @@ const joueursSchema= mongoose.Schema({
  Age:{
     type: Number,
     require: true
+ },
+ Score : {
+     type : Number,
+     default : 0
  }
 
 

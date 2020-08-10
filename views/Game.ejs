@@ -13,21 +13,25 @@
      
 
       <form action="/Quiz/Jeu/play" method="post">
-        <% questions.forEach(data =>{%>
+        <% for (var i = 0; i < questions.length; i++) {%>
 
-        <h3><%= data.question.enonce %>  </h3>
-
-        <div class="custom-control custom-radio">
+        <h4><%= questions[i].enonce %>  </h4>
+          
+        <% for (var j = 0; j < questions[i].proposition.length; j++) {%>
+        <div class="custom-control custom-radio"> 
           <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="groupOfDefaultRadios">
-          <label class="custom-control-label" for="defaultGroupExample1"><%= data.question.popostion %></label>
+          <label class="custom-control-label" for="defaultGroupExample1"><h6><%= questions[i].proposition[j].proposition   %></h6> </label>
         </div>
+        <% } %> 
 
-      <% }); %> 
+      <% } %> 
         
-
+          <br><br>
 <button type="submit"class="btn btn-succes">Next question</button>
 
       </form>
+      <br>
+      <br>
 
 
 

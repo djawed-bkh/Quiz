@@ -1,18 +1,14 @@
 const routes = require('express').Router();
 
-//const dataBase =require('../models/quizModel');
-
-
 const {validationPlayers} = require('../Validation');
 const { JoueursSchema } = require('../models/quizModel');
 
 
 
-routes.get('/',(req,res)=>{
-   res.render('Joueur');
+routes.get('/',async (req,res)=>{
+   const rank= await JoueursSchema.find().sort('-Score').limit(2);
    
-   
-   // add a rank table here
+   res.render('Joueur',{Score : rank});
 
 })
 
@@ -32,13 +28,14 @@ if(error) return res.status(400).send(error.details[0].message);
         
    const Player = new JoueursSchema({
       prenom : req.body.prenom,
-      Age : req.body.Age
+      Age : req.body.Age,
+      Score: 0
    });
    Player
    .save()
    .then(result => {
        console.log(result)
-       res.redirect('/Quiz/Jeu/');
+       res.status(200).redirect('/Quiz/Jeu/');
    })
    .catch(error => {
        console.log(error)
