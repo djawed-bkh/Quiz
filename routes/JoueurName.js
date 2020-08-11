@@ -35,7 +35,7 @@ if(error) return res.status(400).send(error.details[0].message);
    .save()
    .then(result => {
        console.log(result)
-       res.status(200).redirect('/Quiz/Jeu/');
+       res.status(200).redirect('/Quiz/Jeu/'+Player._id);
    })
    .catch(error => {
        console.log(error)

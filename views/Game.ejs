@@ -4,32 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Node quiz</title>
 </head>
 <body>
     <center>
       <h1> Node quiz </h1> <br> <br>
      
+      <% for (var i = 0; i < questions.length; i++) {%>
 
       <form action="/Quiz/Jeu/play" method="post">
-        <% for (var i = 0; i < questions.length; i++) {%>
 
         <h4><%= questions[i].enonce %>  </h4>
           
         <% for (var j = 0; j < questions[i].proposition.length; j++) {%>
-        <div class="custom-control custom-radio"> 
-          <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="groupOfDefaultRadios">
-          <label class="custom-control-label" for="defaultGroupExample1"><h6><%= questions[i].proposition[j].proposition   %></h6> </label>
-        </div>
-        <% } %> 
+          
+         <div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  <label class="form-check-label" for="exampleRadios1">
+    <%= questions[i].proposition[j].proposition   %>
+  </label>
+  <br>
+</div>
+ <% } %> 
+ <br><br>
+      
+        <br><br>
 
-      <% } %> 
-        
-          <br><br>
-<button type="submit"class="btn btn-succes">Next question</button>
+       
 
       </form>
+     
+
+      <% } %> 
+      <button type="submit" class="btn  btn-primary btn-lg">Submit</button>
       <br>
       <br>
 
