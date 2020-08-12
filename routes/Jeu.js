@@ -1,19 +1,26 @@
 const routes = require('express').Router();
 const mongoose = require('mongoose');
-const { QuizSchema } = require('../models/quizModel');
+const {
+  QuizSchema
+} = require('../models/quizModel');
 
 
 
-routes.get('/:ID', async (req,res)=>{ 
-  
+routes.get('/:ID', async (req, res) => {
+
   const data = await QuizSchema.find();
-  res.render('Game',{questions : data});
+  for (let index = 0; index < data.length; index++) {
+    res.render('Game', {
+      questions: data[index]
+    });
+  }
+
 });
 
 
 
-routes.post('/play',(req,res)=>{    
-  
+routes.post('/play', (req, res) => {
+
 
 
 
@@ -24,4 +31,4 @@ routes.post('/play',(req,res)=>{
 
 
 
-module.exports=routes;
+module.exports = routes;
