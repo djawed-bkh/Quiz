@@ -3,7 +3,7 @@ const body_parser= require('body-parser');
 const dotenv = require('dotenv');
 const mongoose= require('mongoose');
 const hapi = require('@hapi/joi');
-
+const paginate = require('express-paginate');
 
 const app = express();
 
