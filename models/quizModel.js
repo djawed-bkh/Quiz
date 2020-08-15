@@ -2,48 +2,48 @@ const mongoose = require('mongoose');
 
 
 const schemaPopostion = mongoose.Schema({
-proposition: String,
-sollution:Boolean
+    proposition: String,
+    sollution: Boolean
 
 });
 
 
 const QuizSchema = mongoose.Schema({
 
-    
-      enonce: String,
-      proposition: [schemaPopostion]
-    
 
-
-});
-
-const Quiz = mongoose.model("QuizCollection",QuizSchema);
-
-
-const joueursSchema= mongoose.Schema({
- prenom:{
-     type:String,
-     require: true,
- },
- Age:{
-    type: Number,
-    require: true
- },
- Score : {
-     type : Number,
-     default : 0
- }
+    enonce: String,
+    proposition: [schemaPopostion]
 
 
 
 });
 
+const Quiz = mongoose.model("QuizCollection", QuizSchema);
 
-const joueurs = mongoose.model("joueurCollections",joueursSchema);
+
+const joueursSchema = mongoose.Schema({
+    prenom: {
+        type: String,
+        require: true,
+    },
+    Age: {
+        type: Number,
+        require: true
+    },
+    Score: {
+        type: Number,
+        default: 0
+    }
+
+
+
+});
+
+
+const joueurs = mongoose.model("joueurCollections", joueursSchema);
 
 module.exports = {
-QuizSchema : Quiz,
-JoueursSchema :  joueurs
+    QuizSchema: Quiz,
+    JoueursSchema: joueurs
 
 }
