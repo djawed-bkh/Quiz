@@ -10,8 +10,7 @@ const {
 
 
 routes.get('/', async (req, res) => {
-   const rank = await JoueursSchema.find().sort('-Score').limit(2);
-
+   const rank = await JoueursSchema.find().sort('-Score').limit(3);
    res.render('Joueur', {
       Score: rank
    });

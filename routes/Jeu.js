@@ -1,6 +1,8 @@
 const routes = require('express').Router();
 const mongoose = require('mongoose');
-const {QuizSchema} = require('../models/quizModel');
+const {
+  QuizSchema
+} = require('../models/quizModel');
 
 
 
@@ -23,7 +25,7 @@ routes.get('/:ID', async (req, res) => {
       totalPages: Math.ceil(Count, limit),
       currentPage: page
     })
-} catch (err) {
+  } catch (err) {
     console.log(err);
   }
 
@@ -34,12 +36,16 @@ routes.get('/:ID', async (req, res) => {
 
 
 routes.post('/:ID/play', async (req, res) => {
-  const answer = await req.body.reponse
-  if(answer){
-    // on fais un patch
-  }
+
+
   
-  res.send("hello");
+  /* if(answer){
+
+     // on fais un patch
+   }
+   let page= 1;
+   let Url='http://localhost:3000/Quiz/Jeu/'+req.params.ID+'?page='+page+'&limit=2';
+   res.redirect(Url);*/
 
 });
 
