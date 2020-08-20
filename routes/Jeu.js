@@ -4,11 +4,19 @@ const {
   QuizSchema
 } = require('../models/quizModel');
 
-
+// declaration for pagination (because i am changings routes so i cant code simple pagination stuff)
+// Ps : that was the only sollution that i have found
+// so please if you have any suggestion dont hesitate
+let score = 0;
+let curPage=0;
+let totPages=0;
 
 routes.get('/:ID', async (req, res) => {
+
+
+
   const {
-    page = 1, limit = 10
+    page = 1, limit = 1
   } = req.query;
   try {
 
@@ -18,8 +26,10 @@ routes.get('/:ID', async (req, res) => {
       .exec();
 
 
-
+    curPage=page;
     const Count = await QuizSchema.countDocuments();
+    totPages=Math.ceil(Count, limit),
+    
     res.render('Game', {
       data,
       totalPages: Math.ceil(Count, limit),
@@ -36,16 +46,15 @@ routes.get('/:ID', async (req, res) => {
 
 
 routes.post('/:ID/play', async (req, res) => {
-
-
+  const answer = await req.body.reponse;
   
-  /* if(answer){
-
+   if(answer){
+    score+=1;
+    
      // on fais un patch
    }
-   let page= 1;
-   let Url='http://localhost:3000/Quiz/Jeu/'+req.params.ID+'?page='+page+'&limit=2';
-   res.redirect(Url);*/
+   curPage+=1;
+  res.redirect('http://localhost:3000/Quiz/Jeu/'+req.params.ID+'?page='+curPage+'&limit=2');
 
 });
 
