@@ -8,7 +8,7 @@ const {
 } = require('../models/quizModel');
 
 
-
+//tableau des classements
 routes.get('/', async (req, res) => {
    const rank = await JoueursSchema.find().sort('-Score').limit(3);
    res.render('Joueur', {
@@ -18,7 +18,7 @@ routes.get('/', async (req, res) => {
 })
 
 
-
+// submitting players data before playing
 routes.post('/SubmitName', async (req, res) => {
 
    // validating data 
