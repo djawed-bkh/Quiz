@@ -53,8 +53,15 @@ routes.post('/:ID/play', async (req, res) => {
     
      // on fais un patch
    }
+   curPage=parseInt(curPage);
    curPage+=1;
-  res.redirect('http://localhost:3000/Quiz/Jeu/'+req.params.ID+'?page='+curPage+'&limit=2');
+   if(curPage<=data.Count){
+    res.redirect('http://localhost:3000/Quiz/Jeu/'+req.params.ID+'?page='+curPage+'&limit=1');
+   }else{
+    res.redirect('http://localhost:3000/Quiz/Jeu/'+req.params.ID+'?page='+curPage+'&limit=1'); // resultat
+
+   }
+ 
 
 });
 
